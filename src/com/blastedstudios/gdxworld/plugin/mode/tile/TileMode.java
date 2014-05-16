@@ -82,7 +82,7 @@ public class TileMode extends AbstractMode {
 		Vector2 tileCoordinates = new Vector2(getOffset(coordinates.x), getOffset(coordinates.y));
 		if(Gdx.input.isButtonPressed(Buttons.RIGHT))//right mouse click remove tile
 			screen.getLevel().getTiles().remove(tileCoordinates);
-		else if(activeTile != null) {
+		else if(activeTile != null && Gdx.input.isButtonPressed(Buttons.LEFT)) {
 			GDXTile tile = new GDXTile(tileCoordinates.x, tileCoordinates.y, activeTile.getResource(), activeTile.getResX(), activeTile.getResY(), activeTile.getTileSize());
 			screen.getLevel().getTiles().put(tileCoordinates, tile);
 		}
